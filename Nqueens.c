@@ -43,7 +43,7 @@ int canplace(int* tab, int x, int y)
 	return 1;
 }
 
-int recurs(int* tab, int y, int n, unsigned int *result)
+unsigned int recurs(int* tab, int y, int n, unsigned int *result)
 {
 	int x;
 	
@@ -64,7 +64,7 @@ int recurs(int* tab, int y, int n, unsigned int *result)
 		}
 		x++;
 	}
-	return result;
+	return (unsigned int)result;
 }
 
 

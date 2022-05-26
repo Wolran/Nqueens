@@ -1,11 +1,11 @@
-#include <io.h>
+#include <unistd.h>
 #include <stdlib.h>
 
 void	ft_put_nbr(unsigned int nb)
 {
 	if (nb >= 10)
 		ft_put_nbr(nb / 10);
-	_write(1, "0123456789" + (nb % 10), 1);
+	write(1, "0123456789" + (nb % 10), 1);
 }
 
 void	put_tab(int* tab, int n, unsigned int *result)
@@ -20,15 +20,15 @@ void	put_tab(int* tab, int n, unsigned int *result)
 		while (j < n)
 		{
 			if (j == tab[i])
-				_write(1, "db", 2);
+				write(1, "db", 2);
 			else
-				_write(1, "[]", 2);
+				write(1, "[]", 2);
 			j++;
 		}
-		_write(1, "\n", 1);
+		write(1, "\n", 1);
 		i++;
 	}
-	_write(1, "\n", 1);
+	write(1, "\n", 1);
 }
 
 int canplace(int* tab, int x, int y)
@@ -84,7 +84,7 @@ int main()
 {
 	unsigned int n = Nqueens(10);
 
-	_write(1, "result :", 9);
+	write(1, "result :", 9);
 	ft_put_nbr(n);
-	_write(1, "\n", 1);
+	write(1, "\n", 1);
 }
